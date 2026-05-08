@@ -1,0 +1,166 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ticket Booking System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Ticket Booking System</h1>
+
+    <div class="booking-form">
+
+      <div>
+        <label>Booking Type</label>
+        <select id="type">
+          <option>Bus</option>
+          <option>Train</option>
+          <option>Movie</option>
+        </select>
+      </div>
+
+      <div>
+        <label>From</label>
+        <input type="text" placeholder="Enter source">
+      </div>
+
+      <div>
+        <label>To</label>
+        <input type="text" placeholder="Enter destination">
+      </div>
+
+      <div>
+        <label>Date</label>
+        <input type="date">
+      </div>
+
+    </div>
+
+    <div class="legend">
+      <div>
+        <div class="box available-box"></div>
+        <span>Available</span>
+      </div>
+
+      <div>
+        <div class="box selected-box"></div>
+        <span>Selected</span>
+      </div>
+
+      <div>
+        <div class="box booked-box"></div>
+        <span>Booked</span>
+      </div>
+    </div>
+
+    <div class="screen">
+      SCREEN / DRIVER
+    </div>
+
+    <div class="seat-container">
+
+      <h2 class="seat-title">Select Your Seats</h2>
+
+      <div class="seats" id="seats">
+
+        <!-- Seats -->
+        <div class="seat">1</div>
+        <div class="seat">2</div>
+        <div class="seat booked">3</div>
+        <div class="seat">4</div>
+        <div class="seat">5</div>
+        <div class="seat">6</div>
+        <div class="seat booked">7</div>
+        <div class="seat">8</div>
+
+        <div class="seat">9</div>
+        <div class="seat">10</div>
+        <div class="seat">11</div>
+        <div class="seat">12</div>
+        <div class="seat booked">13</div>
+        <div class="seat">14</div>
+        <div class="seat">15</div>
+        <div class="seat">16</div>
+
+        <div class="seat">17</div>
+        <div class="seat">18</div>
+        <div class="seat">19</div>
+        <div class="seat booked">20</div>
+        <div class="seat">21</div>
+        <div class="seat">22</div>
+        <div class="seat">23</div>
+        <div class="seat">24</div>
+
+      </div>
+
+    </div>
+
+    <div class="summary">
+      <p>Selected Seats: <span id="count">0</span></p>
+      <p>Total Price: ₹<span id="total">0</span></p>
+
+      <button onclick="bookTickets()">
+        Book Now
+      </button>
+    </div>
+
+  </div>
+<!--
+  <script>
+
+    const seats = document.querySelectorAll(".seat:not(.booked)");
+    const count = document.getElementById("count");
+    const total = document.getElementById("total");
+
+    let ticketPrice = 200;
+
+    seats.forEach((seat) => {
+      seat.addEventListener("click", () => {
+        seat.classList.toggle("selected");
+        updateBooking();
+      });
+    });
+
+    function updateBooking(){
+
+      const selectedSeats =
+      document.querySelectorAll(".seat.selected");
+
+      const selectedCount = selectedSeats.length;
+
+      count.innerText = selectedCount;
+
+      total.innerText = selectedCount * ticketPrice;
+    }
+
+    function bookTickets(){
+
+      const selectedSeats =
+      document.querySelectorAll(".seat.selected");
+
+      if(selectedSeats.length === 0){
+        alert("Please select at least one seat");
+        return;
+      }
+
+      alert("Tickets Booked Successfully!");
+
+      selectedSeats.forEach((seat)=>{
+        seat.classList.remove("selected");
+        seat.classList.add("booked");
+      });
+
+      updateBooking();
+    }
+
+  </script>
+-->
+
+</body>
+</html>
+```
